@@ -43,131 +43,131 @@ DROP TABLE Tipo_Bancos;
 
 CREATE TABLE Sindicatos(
     id_sindicato                              NUMBER(11)  NOT NULL,
-    nombre_sindicato                          NUMBER NOT NULL,
-    afiliados_rut_afiliado                    NUMBER NOT NULL,
-    solicitud_ingreso_id_creacion_ingreso     NUMBER(11) NOT NULL,
-    formulario_ingreso_id_formulario_ingreso  NUMBER NOT NULL
+    nombre_sindicato                          VARCHAR(250) NOT NULL,
+    afiliados_rut_afiliado                    NUMBER(11) NOT NULL,
+    solicitud_ingreso_id_creacion_ingreso     VARCHAR(250) NOT NULL,
+    formulario_ingreso_id_formulario_ingreso  VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Formulario_Ingreso(
     id_formulario_ingreso              NUMBER(11) NOT NULL,
-    edad                               NUMBER NOT NULL,
-    Sindicato_id_Sindicato             NUMBER NOT NULL
+    edad                               NUMBER(11) NOT NULL,
+    Sindicato_id_Sindicato             NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Solicitud_Ingreso(
-    id_solicitud_ingreso                      NUMBER(11) NOT NULL,
-    fecha_creacion_solicitud                 NUMBER NOT NULL,
-    hora_creacion_solicitud_ingreso          NUMBER NOT NULL,
-    formulario_ingreso_id_formulario_ingreso NUMBER NOT NULL
+    id_solicitud_ingreso                     NUMBER(11) NOT NULL,
+    fecha_creacion_solicitud                 NUMBER(11) NOT NULL,
+    hora_creacion_solicitud_ingreso          NUMBER(11) NOT NULL,
+    formulario_ingreso_id_formulario_ingreso VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Postulantes(
-    id_postulante                          NUMBER NOT NULL,
-    nombre_postulante                      NUMBER NOT NULL,
-    nacionalidad_postulante                NUMBER NOT NULL,
-    solicitud_ingreso_id_solicitud_ingreso NUMBER NOT NULL
+    id_postulante                          NUMBER(11) NOT NULL,
+    nombre_postulante                      VARCHAR(250) NOT NULL,
+    nacionalidad_postulante                VARCHAR(250) NOT NULL,
+    solicitud_ingreso_id_solicitud_ingreso VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Afiliados(
     rut_afiliado                                 NUMBER(11) NOT NULL,
-    nombre_afiliado                              NUMBER NOT NULL,
-    fecha_nacimiento                             NUMBER NOT NULL,
-    pago_arancel_ID_pago                         NUMBER NOT NULL,
-    pago_arancel_rut_afiliado                    NUMBER NOT NULL,
-    Sintac_ID_Sintac                             NUMBER NOT NULL,
-    descuento_transporte_Id_descuento_transporte NUMBER NOT NULL,
-    descuento_transporte_rut_afiliado            NUMBER NOT NULL,
-    aseguradora_vehiculo_patente_vehiculo        NUMBER NOT NULL,
-    tipo_parentesco_id_tipo_parentesco           NUMBER NOT NULL
+    nombre_afiliado                              VARCHAR(250) NOT NULL,
+    fecha_nacimiento                             NUMBER(11) NOT NULL,
+    pago_arancel_ID_pago                         NUMBER(11) NOT NULL,
+    pago_arancel_rut_afiliado                    NUMBER(11) NOT NULL,
+    Sintac_ID_Sintac                             NUMBER(11) NOT NULL,
+    descuento_transporte_Id_descuento_transporte NUMBER(11) NOT NULL,
+    descuento_transporte_rut_afiliado            NUMBER(11) NOT NULL,
+    aseguradora_vehiculo_patente_vehiculo        NUMBER(11) NOT NULL,
+    tipo_parentesco_id_tipo_parentesco           VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Aseguradora_Vehiculos(
-    patente_vehiculo                NUMBER NOT NULL,
-    marca_vehiculo                  NUMBER NOT NULL,
-    modelo                          NUMBER NOT NULL,
-    color                           NUMBER NOT NULL,
-    tipo_vehiculo                   NUMBER NOT NULL,
-    numero_chasis                   NUMBER NOT NULL,
-    numero_motor                    NUMBER NOT NULL
+    patente_vehiculo                NUMBER(11) NOT NULL,
+    marca_vehiculo                  VARCHAR(250) NOT NULL,
+    modelo                          VARCHAR(250)NOT NULL,
+    color                           VARCHAR(250) NOT NULL,
+    tipo_vehiculo                   VARCHAR(250) NOT NULL,
+    numero_chasis                   NUMBER(11) NOT NULL,
+    numero_motor                    NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Afiliado_Tipo_Discapacidad(
-    afiliado_rut_afiliado                   NUMBER NOT NULL,
-    tipo_discapacidad_afiliado_rut_afiliado NUMBER NOT NULL
+    afiliado_rut_afiliado                   NUMBER(11) NOT NULL,
+    tipo_discapacidad_afiliado_rut_afiliado VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Tipo_Discapacidad_Afiliados(
     rut_afiliado                    NUMBER(11) NOT NULL,
-    corre_electronico_afiliado      NUMBER NOT NULL,
-    id_tipo_discapacidad            NUMBER NOT NULL
+    correo_electronico_afiliado     VARCHAR(250) NOT NULL,
+    id_tipo_discapacidad            NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Beneficio_Afiliados(
-    beneficio_id_beneficio          NUMBER NOT NULL,
-    afiliados_rut_afiliado          NUMBER NOT NULL
+    beneficio_id_beneficio          NUMBER(11) NOT NULL,
+    afiliados_rut_afiliado          NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Beneficios(
-    id_beneficio                    NUMBER NOT NULL,
-    nombre_beneficio                NUMBER NOT NULL
+    id_beneficio                    NUMBER(11) NOT NULL,
+    nombre_beneficio                VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Tipo_Beneficios(
-    id_tipo_beneficio               NUMBER NOT NULL,
-    nombre_tipo_beneficio           NUMBER NOT NULL,
-    beneficio_id_beneficio          NUMBER NOT NULL
+    id_tipo_beneficio               NUMBER(11) NOT NULL,
+    nombre_tipo_beneficio           VARCHAR(250) NOT NULL,
+    beneficio_id_beneficio          NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Extranjeros(
-    numero_pasaporte_extranjero           NUMBER NOT NULL,
-    nacionalidad_extranjero               NUMBER NOT NULL,
-    pretension_sueldo_extranjero          NUMBER NOT NULL,
-    direccion_extranjero                  NUMBER NOT NULL,
+    numero_pasaporte_extranjero           NUMBER(11) NOT NULL,
+    nacionalidad_extranjero               VARCHAR(250) NOT NULL,
+    pretension_sueldo_extranjero          NUMBER(11) NOT NULL,
+    direccion_extranjero                  VARCHAR(250) NOT NULL,
     rut_afiliado                          NUMBER(11) NOT NULL,
-    solicitud_ingreso_id_creacion_ingreso NUMBER NOT NULL
+    solicitud_ingreso_id_creacion_ingreso VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Provincias(
-    id_provincia                           NUMBER NOT NULL,
-    nombre_provincia                       NUMBER NOT NULL,
+    id_provincia                           NUMBER(11) NOT NULL,
+    nombre_provincia                       VARCHAR(250) NOT NULL,
     rut_afiliado                           NUMBER(11) NOT NULL,
-    extranjero_numero_pasaporte_extranjero NUMBER NOT NULL
+    extranjero_numero_pasaporte_extranjero NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Regiones(
-    id_region                       NUMBER NOT NULL,
-    nombre_region                   NUMBER NOT NULL,
-    provincia_id_provincia          NUMBER NOT NULL
+    id_region                       NUMBER(11) NOT NULL,
+    nombre_region                   VARCHAR(250) NOT NULL,
+    provincia_id_provincia          NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Comunas(
-    id_comuna                       NUMBER NOT NULL,
-    nombre_comuna                   NUMBER NOT NULL,
-    region_id_region                NUMBER NOT NULL,
-    id_region                       NUMBER NOT NULL
+    id_comuna                       NUMBER(11) NOT NULL,
+    nombre_comuna                   VARCHAR(250) NOT NULL,
+    region_id_region                NUMBER(11) NOT NULL,
+    id_region                       NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Descuento_Transportes(
-    id_descuento_transporte            NUMBER NOT NULL,
+    id_descuento_transporte            NUMBER(11) NOT NULL,
     rut_afiliado                       NUMBER(11)NOT NULL,
-    porcentaje_de_descuento_transporte NUMBER NOT NULL
+    porcentaje_de_descuento_transporte NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Pago_Aranceles(
-    id_pago                         NUMBER NOT NULL,
+    id_pago                         NUMBER(11) NOT NULL,
     rut_afiliado                    NUMBER(11) NOT NULL,
-    fecha_pago                      NUMBER NOT NULL
+    fecha_pago                      NUMBER(11) NOT NULL
 );
 
 CREATE TABLE Tipo_Parentescos(
-    id_tipo_parentesco              NUMBER NOT NULL,
-    nombre_parentesco               NUMBER NOT NULL
+    id_tipo_parentesco              NUMBER(11) NOT NULL,
+    nombre_parentesco               VARCHAR(250) NOT NULL
 );
 
 CREATE TABLE Tipo_Bancos(
-    id_banco                        NUMBER NOT NULL,
-    nombre_banco                    NUMBER NOT NULL
+    id_banco                        NUMBER(11) NOT NULL,
+    nombre_banco                    VARCHAR(250) NOT NULL
 );
 
 ALTER TABLE Sindicatos ADD CONSTRAINT sindicato_PK PRIMARY KEY (id_sindicato);
